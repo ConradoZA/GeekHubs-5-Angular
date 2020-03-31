@@ -1,0 +1,38 @@
+<div mat-dialog-title>
+    <mat-toolbar color="primary" class="flexBetween borderRadius">
+        <div>{{apiService.detail['title']}}</div>
+        <div class="adult" *ngIf="apiService.detail['adult']">18+</div>
+    </mat-toolbar>
+</div>
+
+<div mat-dialog-content class="flexColumn noSelect">
+    <div class="flexRow">
+        <div class="img">
+            <img *ngIf="apiService.detail['poster_path']" src="https://image.tmdb.org/t/p/w185{{apiService.detail['poster_path']}}">
+            <img *ngIf="!apiService.detail['poster_path']" src="../../../assets/img/none.jpg">
+        </div>
+        <hr>
+        <div class="flexColumn">
+            <div><b>Título Original:</b> {{apiService.detail['original_title']}}</div>
+            <div><b>Fecha:</b> {{apiService.detail['release_date'] | changeDate}}</div>
+            <div><b>Género/s:</b><span *ngFor="let genre of apiService.detail['genres']"><span> {{genre['name']}},</span></span>
+            </div>
+            <div *ngIf="apiService.detail['overview']"><b>Descripción:</b> "{{apiService.detail['overview']}}"</div>
+            <div *ngIf="!apiService.detail['overview']"><b>Descripción:</b> Descripción no disponible.</div>
+        </div>
+    </div>
+    <hr *ngIf="!toggleCastButton">
+    <div class="cast" *ngIf="!toggleCastButton">
+        <div class="noSelect actors flexColumn" *ngFor="let actor of cast">
+            <img *ngIf="actor.profile_path" src="https://image.tmdb.org/t/p/w185{{actor.profile_path}}">
+            <img *ngIf="!actor.profile_path" src="../../../assets/img/none.jpg">
+            <p>{{actor.name}}</p>
+        </div>
+    </div>
+</div>
+<div mat-dialog-actions class="flexBetween">
+    <button mat-raised-button color="accent" (click)="onClickClose()">Cerrar</button>
+    <button mat-raised-button color="accent" (click)="toggleCast()">Reparto</button>
+    <button mat-raised-button color="accent" (click)="onClickGotoVideo()">Ver Trailer</button>
+    <button mat-raised-button color="accent" [mat-dialog-close]="true">Buscar Relacionadas</button>
+</div>

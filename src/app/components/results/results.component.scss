@@ -1,0 +1,13 @@
+mat-card {
+    width: 250px;
+    margin: 2rem;
+}
+
+mat-paginator {
+    justify-self: flex-start;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}

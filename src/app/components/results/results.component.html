@@ -1,0 +1,16 @@
+<mat-paginator [length]="apiService.movies.length" [pageSize]="page_size" [pageSizeOptions]="pageSizeOptions" (page)="handlePage($event)" showFirstLastButtons color="accent" *ngIf="apiService.movies.length>0">
+</mat-paginator>
+
+<div class="container" *ngIf="apiService.movies.length>0">
+    <mat-card *ngFor="let movie of (apiService.movies | sort) | paginate:page_size:page_number" (click)="openModal(movie.id)" class="noSelect">
+        <mat-card-header>
+            <mat-card-title>{{movie.title}}</mat-card-title>
+            <mat-card-subtitle>{{movie.release_date | changeDate}}</mat-card-subtitle>
+        </mat-card-header>
+        <img *ngIf="movie.poster_path" mat-card-image src="https://image.tmdb.org/t/p/w185{{movie.poster_path}}">
+        <img *ngIf="!movie.poster_path" mat-card-image src="../../../assets/img/none.jpg">
+        <mat-card-content>
+
+        </mat-card-content>
+    </mat-card>
+</div>

@@ -1,0 +1,13 @@
+<mat-toolbar color="primary">
+    <div class="botones">
+        <button mat-flat-button [color]="color" (mouseover)="color = 'accent'" (mouseout)="color = 'primary'" (click)="getTop()">Top Rated</button>
+        <button mat-flat-button [color]="color2" (mouseover)="color2 = 'accent'" (mouseout)="color2 = 'primary'" (click)="getPopular()">Popular</button>
+        <button mat-flat-button [color]="color3" (mouseover)="color3 = 'accent'" (mouseout)="color3 = 'primary'" (click)="getNow()">Playing Now</button>
+    </div>
+    <div class="busqueda">
+        <mat-form-field appearance="standard" color="accent">
+            <mat-label>Search</mat-label>
+            <input matInput placeholder="Write here" (keyup)="getSearch($event)">
+        </mat-form-field>
+    </div>
+</mat-toolbar>

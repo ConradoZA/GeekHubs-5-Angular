@@ -1,0 +1,49 @@
+.flexRow {
+    display: flex;
+    flex-direction: row;
+}
+
+.flexColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+.borderRadius {
+    border-radius: 1rem;
+}
+
+.flexBetween {
+    display: flex;
+    justify-content: space-between;
+}
+
+hr {
+    margin-left: 0.5rem;
+    margin-right: 1rem;
+}
+
+.adult {
+    color: red;
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+.cast {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.actors {
+    align-items: center;
+    border: darkgrey solid 1px;
+    border-radius: 0 0 0.5rem 0.5rem;
+    margin: 1rem;
+    max-width: 125px;
+    text-align: center;
+}
+
+div.actors>img {
+    max-width: 125px;
+    margin-bottom: 0.3rem;
+}

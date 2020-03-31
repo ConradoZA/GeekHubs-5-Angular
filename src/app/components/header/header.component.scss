@@ -1,0 +1,15 @@
+mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 5px 10px #777777;
+    margin-bottom: 0.5rem;
+}
+
+button {
+    margin: 0.3rem;
+    border: solid rgba(0, 0, 0, 0.8) 1px;
+}
+
+::ng-deep mat-form-field {
+    width: 25rem;
+}

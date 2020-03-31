@@ -1,0 +1,12 @@
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({
+  name: 'changeDate'
+})
+export class ChangeDatePipe implements PipeTransform {
+
+  transform(date:string):string {
+    return date?.split("-").reverse().join("/");
+  }
+
+}

@@ -1,0 +1,9 @@
+mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.toTop {
+    user-select: none;
+    cursor: pointer;
+}
