@@ -1,9 +1,18 @@
 mat-toolbar {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .toTop {
     user-select: none;
     cursor: pointer;
+    background-color: rgb(255, 111, 0);
+    padding: 0.3rem;
+    border: black solid 1px;
+    border-radius: 0.4rem;
+}
+
+.toTop:hover {
+    background-color: rgb(175, 180, 43);
 }
