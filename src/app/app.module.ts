@@ -11,8 +11,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
-import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatPaginatorModule, MatPaginatorIntl } from '@angular/material/paginator';
 
 import {HttpClientModule} from '@angular/common/http';
 import { NotfoundComponent } from './components/notfound/notfound.component';
@@ -21,6 +21,7 @@ import { PaginatePipe } from './pipes/paginate.pipe';
 import { ModalComponent } from './components/modal/modal.component';
 import { SortPipe } from './pipes/sort.pipe';
 import { ChangeDatePipe } from './pipes/change-date.pipe';
+import { getSpanishPaginatorIntl } from './esp-paginator-intl';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { ChangeDatePipe } from './pipes/change-date.pipe';
     MatDialogModule,
   ],
   entryComponents:[ModalComponent],
-  providers: [],
+  providers: [
+    { provide: MatPaginatorIntl, useValue: getSpanishPaginatorIntl() }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
