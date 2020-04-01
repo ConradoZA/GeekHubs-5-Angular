@@ -16,7 +16,7 @@ public trailer:object={};
     this.httpClient.get(`https://api.themoviedb.org/3/search/movie?api_key=cea68b520beecac6718820e4ac576c3a&language=es-ES&query=${busqueda}`)
       .subscribe(res => {
         this.movies.push(...res['results']);
-        if(res['total_pages']>10){res['total_pages']=10}
+        if(res['total_pages']>15){res['total_pages']=15}
         for (let i = 2; i <= res['total_pages'];i++) {
            this.httpClient.get(`https://api.themoviedb.org/3/search/movie?api_key=cea68b520beecac6718820e4ac576c3a&language=es-ES&query=${busqueda}&page=${i}`)
            .subscribe(res => {
@@ -30,7 +30,7 @@ public trailer:object={};
     this.httpClient.get('https://api.themoviedb.org/3/movie/top_rated?api_key=cea68b520beecac6718820e4ac576c3a&language=es-ES')
       .subscribe(res => {
         this.movies.push(...res['results']);
-        if(res['total_pages']>10){res['total_pages']=10}
+        if(res['total_pages']>15){res['total_pages']=15}
         for (let i = 2; i <= res['total_pages'];i++) {
            this.httpClient.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=cea68b520beecac6718820e4ac576c3a&language=es-ES&page=${i}`)
            .subscribe(res => {
@@ -44,7 +44,7 @@ public trailer:object={};
     this.httpClient.get('https://api.themoviedb.org/3/movie/popular?api_key=cea68b520beecac6718820e4ac576c3a&language=es-ES')
       .subscribe(res => {
         this.movies.push(...res['results']);
-        if(res['total_pages']>10){res['total_pages']=10}
+        if(res['total_pages']>15){res['total_pages']=15}
         for (let i = 2; i <= res['total_pages'];i++) {
            this.httpClient.get(`https://api.themoviedb.org/3/movie/popular?api_key=cea68b520beecac6718820e4ac576c3a&language=es-ES&page=${i}`)
            .subscribe(res => {
@@ -58,7 +58,7 @@ public trailer:object={};
     this.httpClient.get('https://api.themoviedb.org/3/movie/now_playing?api_key=cea68b520beecac6718820e4ac576c3a&language=es-ES&region=ES')
       .subscribe(res => {
         this.movies.push(...res['results']);
-        if(res['total_pages']>10){res['total_pages']=10}
+        if(res['total_pages']>15){res['total_pages']=15}
         for (let i = 2; i <= res['total_pages'];i++) {
            this.httpClient.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=cea68b520beecac6718820e4ac576c3a&language=es-ES&region=ES&page=${i}`)
            .subscribe(res => {
@@ -77,7 +77,7 @@ public trailer:object={};
     this.httpClient.get(`https://api.themoviedb.org/3/movie/${movie_id}/similar?api_key=cea68b520beecac6718820e4ac576c3a&language=es-ES`)
     .subscribe(res => {
       this.movies.push(...res['results']);
-      if(res['total_pages']>10){res['total_pages']=10}
+      if(res['total_pages']>15){res['total_pages']=15}
       for (let i = 2; i <= res['total_pages'];i++) {
          this.httpClient.get(`https://api.themoviedb.org/3/movie/${movie_id}/similar?api_key=cea68b520beecac6718820e4ac576c3a&language=es-ES&page=${i}`)
          .subscribe(res => {

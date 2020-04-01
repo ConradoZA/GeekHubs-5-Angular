@@ -2,7 +2,7 @@
 </mat-paginator>
 
 <div class="container" *ngIf="apiService.movies.length>0">
-    <mat-card *ngFor="let movie of (apiService.movies | sort) | paginate:page_size:page_number" (click)="openModal(movie.id)" class="noSelect">
+    <mat-card *ngFor="let movie of apiService.movies | paginate:page_size:page_number" (click)="openModal(movie.id)" class="noSelect">
         <mat-card-header>
             <mat-card-title>{{movie.title}}</mat-card-title>
             <mat-card-subtitle>{{movie.release_date | changeDate}}</mat-card-subtitle>

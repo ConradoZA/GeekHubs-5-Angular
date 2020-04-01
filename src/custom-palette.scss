@@ -1,7 +1,7 @@
 @import '~@angular/material/theming';
 @include mat-core();
-$custom-palette-primary:mat-palette($mat-amber, 900);
-$custom-palette-accent:mat-palette($mat-lime, 700);
-$custom-palette-warn:mat-palette($mat-pink, 900);
+$custom-palette-primary:mat-palette($mat-amber, 900, #ffa040, #c43e00);
+$custom-palette-accent:mat-palette($mat-lime, 700, #e4e65e, #7c8500);
+$custom-palette-warn:mat-palette($mat-pink, 900, #bc477b, #560027);
 $custom-theme: mat-dark-theme($custom-palette-primary, $custom-palette-accent, $custom-palette-warn);
 @include angular-material-theme($custom-theme);
