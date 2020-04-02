@@ -8,6 +8,7 @@ export class ApiService {
 public movies:object[]=[];
 public detail:object={};
 public trailer:object={};
+public actor:object={};
 
   constructor(public httpClient:HttpClient) { }
 
@@ -85,6 +86,10 @@ public trailer:object={};
         })
       }
     })
+  }
+  getActor(actorId):void{
+    this.actor={};
+    this.httpClient.get(`https://api.themoviedb.org/3/person/${actorId}?api_key=cea68b520beecac6718820e4ac576c3a&language=es-ES`)
   }
 
 }

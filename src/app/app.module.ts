@@ -22,6 +22,7 @@ import { ModalComponent } from './components/modal/modal.component';
 import { SortPipe } from './pipes/sort.pipe';
 import { ChangeDatePipe } from './pipes/change-date.pipe';
 import { getSpanishPaginatorIntl } from './esp-paginator-intl';
+import { ActorProfileComponent } from './components/actor-profile/actor-profile.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { getSpanishPaginatorIntl } from './esp-paginator-intl';
     ModalComponent,
     SortPipe,
     ChangeDatePipe,
+    ActorProfileComponent,
 
   ],
   imports: [
@@ -50,7 +52,7 @@ import { getSpanishPaginatorIntl } from './esp-paginator-intl';
     MatPaginatorModule,
     MatDialogModule,
   ],
-  entryComponents:[ModalComponent],
+  entryComponents:[ModalComponent,ActorProfileComponent],
   providers: [
     { provide: MatPaginatorIntl, useValue: getSpanishPaginatorIntl() }],
   bootstrap: [AppComponent]

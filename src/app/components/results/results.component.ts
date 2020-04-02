@@ -26,6 +26,7 @@ handlePage(event:PageEvent){
 openModal(movieId):void{
 this.apiService.getDetails(movieId)
 this.trailerService.getMovieId(movieId)
+this.trailerService.getTrailer()
 this.dialog.open(ModalComponent).afterClosed().subscribe(res=>{if(res){this.apiService.getRelated(movieId)}})
 }
   ngOnInit(): void {}

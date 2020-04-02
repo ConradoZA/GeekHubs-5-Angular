@@ -1,0 +1,21 @@
+<div mat-dialog-title>{{trailerService.actorBio['name']}}</div>
+
+<div mat-dialog-content class="flexColumn noSelect">
+    <div class="flexRow">
+        <div class="img">
+            <img *ngIf="trailerService.actorBio['profile_path']" src="https://image.tmdb.org/t/p/w185{{trailerService.actorBio['profile_path']}}">
+            <img *ngIf="!trailerService.actorBio['profile_path']" src="../../../assets/img/none.jpg">
+        </div>
+        <hr>
+        <div class="flexColumn">
+            <div><b>Fecha de nacimiento:</b> {{trailerService.actorBio['birthday'] | changeDate}}</div>
+            <div><b>Lugar de nacimiento:</b> {{trailerService.actorBio['place_of_birth'] | changeDate}}</div>
+            <div><b>Género:</b> <span *ngIf="trailerService.actorBio['gender']===1"> femenino.</span><span *ngIf="trailerService.actorBio['gender']===2"> masculino.</span></div>
+            <div *ngIf="trailerService.actorBio['biography']"><b>Descripción:</b> "{{trailerService.actorBio['biography']}}"</div>
+            <div *ngIf="!trailerService.actorBio['biography']"><b>Descripción:</b> Descripción no disponible.</div>
+        </div>
+    </div>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button color="accent" (click)="onClickClose()">Cerrar</button>
+</div>
