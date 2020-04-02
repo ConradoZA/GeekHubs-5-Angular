@@ -24,6 +24,7 @@ getTrailer(){
   this.httpClient.get(`https://api.themoviedb.org/3/movie/${this.trailerId}/videos?api_key=cea68b520beecac6718820e4ac576c3a&language=es-ES`)
   .subscribe(res=>{this.trailer=res['results']
     if(this.trailer.length>0){this.trailerExists=true; this.key=this.trailer[0]['key']}
+    else{this.trailerExists=false}
   })
   
 }
